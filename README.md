@@ -2,23 +2,33 @@
 A vim configuration script.
 
 ##Installation
-Run the install script to setup pathogen and redirect the .vimrc and .vim directories to work with vim-config.
+Run the install script to:
 
-    ./install.sh
+* Redirect the .vimrc configuration file and the .vim directory to work with vim-config
+* Install pathogen and configure the pathogen .vimrc settings
+* Install each bundle listed in bundles.cfg
+* Add various vim and vim-config aliases to the bash_profile
 
-Optionally, run the path script to add the vim-config/bin directory to the PATH.
+The following command sources the bash_profile to ensure included aliases can be used without restarting the shell.
 
-    ./path.sh
+    ./install.sh && source ~/.bash_profile
 
-Optionally, run the aliases script to install useful vim and vim-config shortcuts.
+##Bundles
+You can install bundles in the same way as you would normally do with pathogen (git clone into ~/.vim).
 
-    ./aliases.sh && source ~/.bash_profile
+If you want to update a single bundle, just git pull the relevant bundle.
 
-*You can run all the above with this one liner.*
+    vb; cd <bundle>;git pull
 
-    ./install.sh && ./path.sh && ./aliases.sh && source ~/.bash_profile
+However, a better way is to add the git repo to bundles.cfg and run the refresh bundles script.
 
-#Aliases
+    ./refresh-bundles.sh
+
+This script basically deletes all existing bundles and reinstalls each bundles listed in bundles.cfg.
+
+    ./refresh-bundles.sh
+
+##Aliases
 These are handy shortcuts for working with vim and vim-config.
 
     ./aliases.sh
@@ -30,8 +40,3 @@ v = vim
 vb = cd ~/.vim/bundle
 
 vrc = ~/.vimrc
-
-##Commands
-* TODO: create script to install bundles
-* TODO: create a script to manage bundles in git sets, like package.json
-* TODO: create a script to uninstall and reinstall all bundles (refreshing/updating all bundles)
