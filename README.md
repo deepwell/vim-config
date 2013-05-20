@@ -20,13 +20,13 @@ If you want to update a single bundle, just git pull the relevant bundle.
 
     vb; cd <bundle>;git pull
 
-However, a better way is to add the git repo to bundles.cfg and run the refresh bundles script.
+To delete all existing bundles and reinstall each bundles listed in bundles.cfg, run:
 
-    ./refresh-bundles.sh
+    ./update-bundles.sh
 
-This script basically deletes all existing bundles and reinstalls each bundles listed in bundles.cfg.
+To delete all bundles, run:
 
-    ./refresh-bundles.sh
+    ./remove-bundles.sh
 
 ##Aliases
 These are handy shortcuts for working with vim and vim-config.
