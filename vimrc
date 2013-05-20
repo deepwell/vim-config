@@ -73,11 +73,9 @@ set listchars=tab:>-,trail:-
 " ---
 "set clipboard=unnamed
 
-" pathogen - bundle/plugin manager
-" ---
-execute pathogen#infect()
-
-" syntastic - syntax checker
-" ---
+"syntastic - syntax checker
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
+
+"pathogen
+execute pathogen#infect()
