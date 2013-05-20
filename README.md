@@ -6,7 +6,7 @@ Run the install script to setup pathogen and redirect the .vimrc and .vim direct
 
     ./install.sh
 
-Optionally, run the path script to add the vim-config/bin directory to PATH.
+Optionally, run the path script to add the vim-config/bin directory to the PATH.
 
     ./path.sh
 
@@ -19,7 +19,7 @@ Optionally, run the aliases script to install useful vim and vim-config shortcut
     ./install.sh && ./path.sh && ./aliases.sh && source ~/.bash_profile
 
 #Aliases
-These are simply handy shortcuts for working with vim and vim-config.
+These are handy shortcuts for working with vim and vim-config.
 
     ./aliases.sh
 
