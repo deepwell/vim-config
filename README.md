@@ -14,38 +14,36 @@ The following command sources the bash_profile to ensure included aliases can be
     ./install.sh && source ~/.bash_profile
 
 ##.vimrc
-To edit your vimrc, use the vr alias.
+Edit vimrc:
 
     vr
 
 ##Bundles
 You can install bundles in the same way as you would normally do with pathogen (git clone into ~/.vim/bundles).  However, the installation includes scripts that make managing bundles easier.
 
-If you want to remove all existing bundles, run:
-
-    remove-bundles
-
-To remove all bundles and reinstall all bundles listed in bundles.cfg, run:
-
-    update-bundles
-
-To install all bundles listed in bundles.cfg, run:
-
-    install-bundles
-
-To edit bundles.cfg, use the provided alias vb.
+Edit bundles.cfg:
 
     vb
 
+Install all bundles listed in bundles.cfg:
+
+    install-bundles
+
+Remove all bundles:
+
+    remove-bundles
+
+Remove all bundles and install all bundles listed in bundles.cfg:
+
+    update-bundles
+
 ##Aliases
-These are handy shortcuts for working with vim and vim-config.
-
-    ./aliases.sh
-
 sv = sudo vim
 
 v = vim
 
-vb = cd ~/.vim/bundle
+vb = vim /path/to/vim-config/bundle.cfg
 
-vrc = ~/.vimrc
+vc = cd /path/to/vim-config
+
+vr = vim ~/.vimrc
