@@ -15,7 +15,6 @@ set ttyfast " Improves redrawing.
 
 " Search/Replace
 " --------------
-syntax on " Color syntax highlighting.
 set hlsearch " Highlight searches.
 set incsearch " Show search matches while typing.
 set ignorecase " Case-insensitive searches unless search contains uppercase chars.
@@ -76,10 +75,14 @@ set listchars=tab:>-,trail:-
 "javascript omnicomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
-"pathogen
+" pathogen
 execute pathogen#infect()
 
-"syntastic
+" syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
+" syntax highlighting
+set background=dark     " you can use `dark` or `light` as your background
+syntax on
+color mango
