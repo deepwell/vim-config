@@ -73,9 +73,13 @@ set listchars=tab:>-,trail:-
 " ---
 "set clipboard=unnamed
 
+"javascript omnicomplete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
 "pathogen
 execute pathogen#infect()
 
 "syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
+
