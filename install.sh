@@ -1,6 +1,10 @@
 #!/bin/bash
 VC_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+#remove existing vim config
+rm ~/.vimrc
+rm -rf  ~/.vim
+
 # redirect vim dotfiles to vim-config working directories
 ln -fns ${VC_HOME}/vimrc ~/.vimrc
 ln -fns ${VC_HOME}/vim ~/.vim
@@ -8,10 +12,6 @@ ln -fns ${VC_HOME}/vim ~/.vim
 # install pathogen
 mkdir -p ${VC_HOME}/vim/autoload ${VC_HOME}/vim/bundle
 curl -Sso ${VC_HOME}/vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-
-# add pathogen settings to the vimrc
-echo -e '\n"pathogen' >> ${VC_HOME}/vimrc
-echo 'execute pathogen#infect()' >> ${VC_HOME}/vimrc
 
 # install bundles
 while read bundle
@@ -26,8 +26,9 @@ for i in ${bundles[@]}; do
 done
 cd ${VC_HOME}
 
-# install vim and vim-config aliases
-echo -e "\n#vim-config aliases" >> ~/.bash_profile
+# add vim-config settings
+echo -e "\n# vim-config" >> ~/.bash_profile
+echo "export PATH=\$PATH:${VC_HOME}/bin" >> ~/.bash_profile 
 echo "alias sv='sudo vim'" >> ~/.bash_profile
 echo "alias v='vim'" >> ~/.bash_profile
 echo "alias vb='cd ${VC_HOME}/vim/bundle'" >> ~/.bash_profile

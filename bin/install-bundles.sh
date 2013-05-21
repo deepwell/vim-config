@@ -1,8 +1,5 @@
 #!/bin/bash
-VC_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# remove all currently existing bundles
-rm -rf ${VC_HOME}/vim/bundle/*
+VC_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 # install bundles
 while read bundle
@@ -15,4 +12,4 @@ cd ${VC_HOME}/vim/bundle
 for i in ${bundles[@]}; do
   git clone $i
 done
-cd ${VC_HOME}
+cd -
