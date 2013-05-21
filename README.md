@@ -19,7 +19,7 @@ Edit vimrc:
     vr
 
 ##Bundles
-While it is possible to install bundles as you would normally do with pathogen (git clone into ~/.vim/bundles), using vim-config's bundle management scripts is much easier.
+While it is possible to install bundles as you would normally do with pathogen (git clone into ~/.vim/bundles), it is cleaner to use vim-config's bundle management scripts.
 
 Edit bundles.cfg:
 
