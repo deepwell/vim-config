@@ -1,11 +1,15 @@
 #!/bin/bash
 VC_HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-#remove existing vim config
+# backup and remove .vimrc
+cp ~/.vimrc{,.bak}
 rm ~/.vimrc
+
+# backup and remove the .vim directory
+cp -r ~/.vim{,.bak}
 rm -rf  ~/.vim
 
-# redirect vim dotfiles to vim-config working directories
+# redirect vim dotfiles to the vim-config working directories
 ln -fns ${VC_HOME}/vimrc ~/.vimrc
 ln -fns ${VC_HOME}/vim ~/.vim
 
@@ -26,7 +30,7 @@ for i in ${bundles[@]}; do
 done
 cd ${VC_HOME}
 
-# add vim-config settings
+# add vim-config settings to .bash_profile
 echo -e "\n# vim-config" >> ~/.bash_profile
 echo "export PATH=\$PATH:${VC_HOME}/bin" >> ~/.bash_profile 
 echo "alias sv='sudo vim'" >> ~/.bash_profile
