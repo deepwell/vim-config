@@ -31,6 +31,6 @@ echo -e "\n# vim-config" >> ~/.bash_profile
 echo "export PATH=\$PATH:${VC_HOME}/bin" >> ~/.bash_profile 
 echo "alias sv='sudo vim'" >> ~/.bash_profile
 echo "alias v='vim'" >> ~/.bash_profile
-echo "alias vb='cd ${VC_HOME}/vim/bundle'" >> ~/.bash_profile
-echo "alias vc='cd ${VC_HOME}'" >> ~/.bash_profile
+echo "alias vb='cd ${VC_HOME}/vim/bundle;ls'" >> ~/.bash_profile
+echo "alias vc='cd ${VC_HOME};ls'" >> ~/.bash_profile
 echo "alias vr='vim ${VC_HOME}/vimrc'" >> ~/.bash_profile
